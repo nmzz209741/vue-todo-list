@@ -1,0 +1,25 @@
+<div>
+    <v-subheader>
+        <v-simple-table class="grey lighten-5">
+            <template v-slot:default="">
+                <tbody>
+                    <tr v-for="task in tasks">
+                        <td width='1%'>
+                            <v-checkbox v-model='task.isCompleted' @change='completeTask(task.isCompleted, task)'>
+                            </v-checkbox>
+                        </td>
+                        <td width='99%'>
+                            <span
+                                :style="task.isCompleted? 'text-decoration:line-through': ''">{{task.description}}</span>
+                        </td>
+                        <td>
+                            <v-btn icon color="grey" @click="removeTask(task.id)">
+                                <v-icon> mdi-delete-circle-outline </v-icon>
+                            </v-btn>
+                        </td>
+                    </tr>
+                </tbody>
+            </template>
+        </v-simple-table>
+    </v-subheader>
+</div>

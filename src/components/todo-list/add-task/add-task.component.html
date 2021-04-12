@@ -1,0 +1,11 @@
+<v-text-field 
+    v-model='description'
+    label="Add new task"
+    filled
+    outlined
+    shaped
+    dense
+    append-icon= "mdi-view-grid-plus-outline"
+    @click:append="addNewTask"
+    @keyup.enter="addNewTask">
+</v-text-field>
